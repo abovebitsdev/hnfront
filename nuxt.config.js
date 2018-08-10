@@ -86,7 +86,7 @@ module.exports = {
     apiPrismicUrl: 'https://here-and-now.cdn.prismic.io' || 'http://localhost:3000',
     api: {
       //* host: process.env.API_HOST || 'http://localhost:3001/api/v1' */
-      host: 'https://here-and-now-api-staging.herokuapp.com/api/v1/' || 'http://localhost:3001/api/v1'
+      host: 'https://here-and-now-api-staging.herokuapp.com/api/v1' || 'http://localhost:3001/api/v1'
     },
     stripe: {
       key: process.env.STRIPE_KEY || 'pk_test_aXT74uDIswL1StP04hDYGVWE'
