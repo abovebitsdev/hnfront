@@ -1,0 +1,24 @@
+.hnn__contact{
+  &__vertical-align{
+    p{
+      margin: 0;
+      width: 100%;
+      font-size: 20px;
+      max-width: 100%;
+      a{
+        color: #FFF;
+      }
+    }
+    &__head{
+      margin-bottom: 50px;
+    }
+    &__small{
+      margin-bottom: 10px;
+      p{
+        font-size: 16px;
+      }
+    }
+    &__address{}
+
+  }
+}

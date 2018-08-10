@@ -1,0 +1,75 @@
+.hnn__select{
+  font-family: $font-family-adieu;
+  font-size: 40px;
+  line-height: 100%;
+  position: relative;
+  @include breakpoint(xs){
+    font-size: 35px;
+    line-height: 40px;
+    display: inline-block;
+  };
+  &__passive{
+    z-index: 2;
+    @include breakpoint(xs){
+      font-size: 35px;
+      line-height: 40px;
+    };
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    p{
+      margin-top: 10px;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      // border-bottom: 3px solid $principal-color;
+    }
+    // span{
+    //
+    // }
+    &__arrow{
+      height: 25px;
+      margin-left: 10px;
+      display: inline-block;
+      vertical-align: bottom;
+      @include breakpoint(xs){
+        height: 18px;
+        margin-bottom: 5px;
+      };
+    }
+    &__principal{
+      span, strong{
+        display: inline;
+        vertical-align: middle;
+      }
+      strong{
+        margin-left: 10px;
+        border-bottom: 3px solid $principal-color;
+      }
+    }
+  }
+  &__active{
+    left: 0;
+    right: 0;
+    z-index: 1;
+    max-height: 0;
+    background: #FFF;
+    overflow: hidden;
+    position: absolute;
+    @include border-radius(5px);
+    @include box-shadow(0, 0, 17px, rgba(0,0,0,0.1));
+    @include transition(max-height 300ms ease-out);
+    p{
+      cursor: pointer;
+      color: rgba(0,0,0,0.1);
+      &.active{
+        color: #000;
+      }
+    }
+    &.showing{
+      overflow: auto;
+      max-height: 300px;
+      padding-bottom: 30px;
+    }
+  }
+}

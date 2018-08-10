@@ -1,0 +1,202 @@
+.header{
+  *{
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  padding: 0;
+  color: #FFF;
+  font-size: 0;
+  z-index: 1000;
+  position: fixed;
+  font-family: $font-family-danza;
+  top: 32px; right: 32px; left: 32px;
+  @include transform(translateY(0) translateX(0));
+  @include transition(all 300ms ease-out);
+  @include breakpoint(xs){
+    top: 20px; right: 20px; left: 20px;
+  }
+  &__logo, &__navigation, &__user{
+    width: 33.33%;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    @include breakpoint(lg) {
+      width: 25%;
+    }
+    @include breakpoint(sm){
+      width: 50%;
+    }
+    @include breakpoint(xs){
+      width: 142px;
+    }
+  }
+  &__logo{
+    h1{
+      top: -987654321px;
+      left: -987654321px;
+      position: absolute;
+    }
+    a{
+      color: #FFF;
+      display: block;
+      text-decoration: none;
+    }
+  }
+  &__navigation{
+    text-align: center;
+    @include breakpoint(lg) {
+      width: 50%;
+    }
+    @include breakpoint(sm){
+      display: none;
+    }
+    nav{
+      a{
+        margin: 0 10px;
+        display: inline-block;
+        &.nuxt-link-active{
+          &:before{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &__user{
+    text-align: right;
+    @include breakpoint(xs){
+      float: right;
+      width: 147px;
+    }
+    ul{
+      display: inline-block;
+      vertical-align: middle;
+      li{
+        margin-right: 13px;
+        display: inline-block;
+        vertical-align: middle;
+        a{
+          color: #FFF;
+          text-decoration: none;
+          &.btn{
+            @include breakpoint(xs){
+              font-size: 14px;
+              padding: 4px 12px;
+            }
+          }
+        }
+        &:last-of-type{
+          margin-right: 0;
+        }
+        &:first-of-type{
+          @include breakpoint(md){
+            display: none;
+          }
+        }
+      }
+    }
+    &__mobile_menu{
+      display: none;
+      @include breakpoint(md){
+        width: 32px;
+        height: 22px;
+        cursor: pointer;
+        margin-left: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        .one,
+        .two,
+        .three{
+          width: 100%;
+          height: 3px;
+          margin: 6px auto;
+          background: #FFF;
+          transition-duration: 0.3s;
+          backface-visibility: hidden;
+        }
+        .one{
+          margin-top: 0;
+        }
+        &.on {
+          .one {
+            @include transform(rotate(45deg) translate(6px, 5px));
+          }
+          .two {
+            opacity: 0;
+          }
+          .three {
+            @include transform (rotate(-45deg) translate(8px, -7px));
+          }
+        }
+      }
+    }
+  }
+  &.white{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 10px 15px;
+    background: #FFF;
+    .header__logo a{
+      color: #000;
+    }
+    .header__navigation nav a{
+      color: #000;
+      &:before{
+        background-color: #000;
+      }
+    }
+    .header__user ul li a{
+      color: #000;
+      &.btn.white{
+        border-color: #000;
+        &:hover{
+          color: #FFF;
+          background: #000;
+          border-color: #FFF;
+        }
+      }
+    }
+    .header__user__mobile_menu .one, .header__user__mobile_menu .two, .header__user__mobile_menu .three{
+      background: #000;
+    }
+  }
+  &.yellow{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 10px 15px;
+    background: $principal-color;
+    .header__logo a{
+      color: #000;
+    }
+    .header__navigation nav a{
+      color: #000;
+      &:before{
+        background-color: #000;
+      }
+    }
+    .header__user ul li a{
+      color: #000;
+      &.btn.white{
+        border-color: #000;
+        &:hover{
+          color: #FFF;
+          background: #000;
+          border-color: #FFF;
+        }
+      }
+    }
+    .header__user__mobile_menu .one, .header__user__mobile_menu .two, .header__user__mobile_menu .three{
+      background: #000;
+    }
+  }
+  &.byebye{
+    @include transform(translateY(-90px));
+  }
+  &.active{
+    @include transform(translateY(0) translateX(-300px));
+  }
+}

@@ -1,0 +1,38 @@
+.wyswyg{
+  text-align: left;
+  &__target{
+    h1, h2{
+      font-size: 25px;
+      line-height: 125%;
+      margin: 50px 0 20px;
+    }
+    h2{
+      font-size: 20px;
+    }
+    h3, p{
+      font-size: 16px
+    }
+    p{
+      margin-bottom: 20px;
+      font-family: $font-family-danza;
+    }
+    ul, ol{
+      margin: 35px 0;
+      padding: 0 0 0 90px;
+      @include breakpoint(xs){
+        padding-left: 30px;
+      };
+      li{
+        margin: 10px 0;
+        font-size: 16px;
+        line-height: 125%;
+
+      }
+    }
+    img{
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
+}

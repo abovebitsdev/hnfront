@@ -1,0 +1,49 @@
+{
+  "name": "here-and-now",
+  "version": "1.0.0",
+  "description": "HalfHelix project",
+  "author": "Axel <latiosaxe@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@pixela/prismic-vue": "0.0.4",
+    "ajv-keywords": "^3.2.0",
+    "axios": "^0.18.0",
+    "cookie": "^0.3.1",
+    "firebase": "^5.0.4",
+    "humanize-string": "^1.0.2",
+    "jquery": "^3.3.1",
+    "js-cookie": "^2.2.0",
+    "jwt-decode": "^2.2.0",
+    "mandrill-api": "^1.0.45",
+    "moment": "^2.22.1",
+    "nuxt": "^1.4.0",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^1.5.0-beta.3",
+    "store": "^2.0.12",
+    "vue-checkbox-radio": "^0.6.0",
+    "vue-cookie": "^1.1.4",
+    "vue-moment": "^4.0.0-0",
+    "vue-slick": "^1.1.12",
+    "vue-stripe-elements-plus": "^0.2.8",
+    "vuejs-datepicker": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  }
+}

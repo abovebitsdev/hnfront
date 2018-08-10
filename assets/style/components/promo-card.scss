@@ -1,0 +1,31 @@
+.promo_card{
+  width: 100%;
+  cursor: pointer;
+  background: #FFF;
+  @include box-shadow(0, 0, 0, rgba(0,0,0,0));
+  @include transition(box-shadow 200ms ease-out);
+  &__head{
+    width: 100%;
+    padding-bottom: 55%;
+    background: center center no-repeat;
+    background-size: cover;
+  }
+  &__body{
+    padding: 30px;
+    text-align: center;
+    &__title{}
+    &__description{
+      display: block;
+      max-width:: 370px;
+      line-height: 125%;
+      margin: 20px auto 30px;
+      font-family: $font-family-danza-medium;
+    }
+  }
+  &:hover{
+    @include box-shadow(0, 0, 10px, rgba(0,0,0,0.3));
+  }
+  &.shadow{
+    @include box-shadow(0, 0, 7px, rgba(0,0,0,0.2));
+  }
+}

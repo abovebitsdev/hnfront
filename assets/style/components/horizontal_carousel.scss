@@ -1,0 +1,68 @@
+.hnn__horizontal{
+  margin-top: 130px;
+  text-align: left;
+  &__head{
+    margin-bottom: 25px;
+    &__title{
+      position: relative;
+      color: $principal-color;
+      .h3{
+        display: block;
+        position: relative;
+        padding-right: 60px;
+        @include breakpoint(xs){
+          padding-right: 0;
+          text-align: center;
+        };
+      }
+      &__arrows{
+        top: 0;
+        right: 0;
+        z-index: 2;
+        text-align: right;
+        position: absolute;
+        @include breakpoint(xs){
+          display: none;
+        };
+        &__single{
+          width: 34px;
+          height: 34px;
+          cursor: pointer;
+          margin-right: 20px;
+          display: inline-block;
+          vertical-align: middle;
+          img{
+            height: 34px;
+          }
+          &.disabled{
+            opacity: 0.2;
+          }
+        }
+        &__next{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__body{
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 2px;
+    @include breakpoint(xs){
+      margin-left: -40px;
+      width: calc(100% + 80px);
+    };
+    &__wrapper{
+      white-space: nowrap;
+      &__card{
+        margin-right: 30px;
+        white-space: normal;
+        display: inline-block;
+        vertical-align: middle;
+        &:last-of-type{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

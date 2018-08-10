@@ -1,0 +1,313 @@
+.hnn{
+  &__home_hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    max-height: 900px;
+    position: relative;
+    &__content{
+      top: 50%;
+      z-index: 2;
+      opacity: 0;
+      color: #FFF;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 480px;
+      text-align: center;
+      position: relative;
+      @include transform(translateY(-60%));
+      @include transition(all 300ms ease-out);
+      @include breakpoint(md){
+        padding: 0 20px;
+      }
+      p{
+        opacity: 0;
+        display: block;
+        font-size: 20px;
+        max-width: 380px;
+        line-height: 30px;
+        margin: 30px auto 50px;
+        @include transform(translateY(-10%));
+        @include transition(all 350ms 200ms ease-out);
+        @include breakpoint(xs){
+          font-size: 15px;
+          line-height: 20px;
+          margin: 20px 0 45px;
+        }
+        // font-family: $font-family-danza;
+      }
+      a{
+        opacity: 0;
+        margin-top: 50px;
+        @include transform(translateY(-10%));
+        @include transition(opacity 400ms 400ms ease-out, transform 400ms 400ms ease-out);
+        @include breakpoint(xs){
+          margin-top: 45px;
+        }
+      }
+      ul{
+        li{
+          font-size: 16px;
+          margin: 0 30px;
+        }
+      }
+      &.long{
+        max-width: 700px;
+      }
+      &.active{
+        opacity: 1;
+        @include transform(translateY(-50%));
+        p{
+          opacity: 1;
+          @include transform(translateY(0));
+        }
+        a{
+          opacity: 1;
+          @include transform(translateY(0));
+        }
+      }
+    }
+    &__go_down{
+      left: 0;
+      right: 0;
+      z-index: 2;
+      color: #FFF;
+      bottom: 70px;
+      cursor: pointer;
+      text-align: center;
+      position: absolute;
+      @include breakpoint(xs){
+        bottom: 40px;
+      }
+    }
+    &__background{
+      opacity: 0;
+      @include absolute();
+      background: center center no-repeat;
+      background-size: cover;
+      @include transition(opacity 300ms ease-out);
+      &:before{
+        content: '';
+        @include absolute();
+        background: rgba(0,0,0,0.2);
+      }
+      &.active{
+        opacity: 1;
+      }
+    }
+
+    &.last{
+      .h2{
+        font-family: $font-family-adieu;
+      }
+    }
+    &.small{
+      max-height: 600px;
+      h2{
+        font-family: $font-family-adieu;
+      }
+      .hnn__home_hero__content p{
+        font-size: 16px;
+        line-height: 125%;
+        font-family: $font-family-danza-medium;
+      }
+    }
+    &.shadow{
+      .hnn__home_hero__background{
+        &:before{
+          background: rgba(0,0,0,0.4);
+        }
+      }
+    }
+  }
+  &__home_description{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 440px;
+    &__head{
+      margin-bottom: 40px;
+      h3{
+        font-family: $font-family-adieu;
+      }
+    }
+    &__body{
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      max-width: 370px;
+    }
+  }
+
+  &__preview{
+    &__head{
+      margin-bottom: 90px;
+      h4{
+        margin-bottom: 40px;
+        font-family: $font-family-adieu;
+      }
+    }
+    &__body{
+        margin-top: 150px;
+        @include breakpoint(xs){
+          margin-top: 70px;
+        };
+    }
+    &__last{
+      display: block;
+      max-width: 400px;
+      margin: 0 auto;
+      &__cta{
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__home_friendship{
+    &__margin_bottom{
+      margin-bottom: 100px;
+      @include breakpoint(xs){
+        margin-bottom: 85px;
+      };
+    }
+    @include breakpoint(xs){
+      .mobile-inline{
+        font-size: 35px;
+        line-height: 40px;
+        display: inline-block;
+      }
+    };
+    &__body{
+      &__content{
+        text-align: left;
+        @include breakpoint(xs){
+          text-align: center;
+        };
+        &__title{
+          font-size: 25px;
+          line-height: 125%;
+          color: $principal-color;
+        }
+        &__description{
+          margin: 25px 0 35px;
+          @include breakpoint(xs){
+            margin-bottom: 0;
+          };
+        }
+        &__list{
+          margin-top: 55px;
+          li{
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+            @include breakpoint(xs){
+              margin-bottom: 40px;
+            };
+          }
+          &__icon{
+            width: 30px;
+            // height: 30px;
+            margin-right: 25px;
+            vertical-align: top;
+            display: inline-block;
+            img{
+              width: 100%;
+            }
+            @include breakpoint(xs){
+              display: block;
+              margin: 0 auto 20px;
+            };
+          }
+          &__text{
+            vertical-align: top;
+            display: inline-block;
+            width: calc(100% - 55px);
+            font-family: $font-family-danza;
+          }
+        }
+        &__cta{}
+      }
+      &__image{
+        img{
+          display: block;
+          max-width: 100%;
+        }
+      }
+    }
+
+    &__last{
+      margin: 120px auto 0;
+      max-width: 380px;
+      display: block;
+      @include breakpoint(xs){
+        margin-top: 70px;
+      };
+      &__title{
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 20px;
+        color: $principal-color;
+      }
+    }
+  }
+  .home_icon_grid{
+    text-align: left;
+    &__wrapper{
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      max-width: 400px;
+      @include breakpoint(xs){
+        max-width: 100%;
+      };
+      &__icon{
+        left: 0;
+        top: 50%;
+        height: 45px;
+        position: absolute;
+        // margin-right: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        @include transform(translateY(-50%));
+        @include breakpoint(xs){
+          height: 25px;
+          width: 34px;
+        };
+        img{
+          margin: 0 auto;
+          display: block;
+          max-height: 100%;
+          vertical-align: middle;
+          // height: 45px;
+        }
+      }
+      &__title{
+        padding: 10px 0;
+        font-size: 130%;
+        line-height: 110%;
+        padding-left: 80px;
+        display: inline-block;
+        vertical-align: middle;
+        @include breakpoint(xs){
+          font-size: 12px;
+          padding-left: 40px;
+        };
+        small{
+          display: block;
+          font-size: 65%;
+          @include breakpoint(xs){
+            display: none;
+          };
+        }
+      }
+      &__description{
+        font-size: 14px;
+        font-family: $font-family-danza;
+      }
+    }
+    &.cursor{
+      cursor: pointer;
+    }
+  }
+}

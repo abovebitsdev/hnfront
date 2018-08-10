@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="13px" viewBox="0 0 18 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-/-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1390.000000, -3213.000000)">
+        <g id="Group-10" transform="translate(1391.000000, 3214.000000)" stroke="#000000" stroke-width="2">
+            <path d="M0.991081433,5.5 L14,5.5" id="Line-2-Copy" stroke-linecap="square"></path>
+            <polyline id="Triangle" transform="translate(13.000000, 5.500000) rotate(90.000000) translate(-13.000000, -5.500000) " points="8 8 13 3 13 3 18 8"></polyline>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,158 @@
+.hnn__form{
+  input[type="text"],input[type="email"],input[type="password"],input[type="date"], textarea{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 20px;
+  	border: 1px solid #D1D1D1;
+    @include border-radius(8px);
+    &.error{
+      border-color: red;
+    }
+  }
+  &__input_icon{
+    top: 10px;
+    right: 15px;
+    position: absolute;
+    img{
+      height: 20px;
+    }
+  }
+  &__black_link{
+    color: #000;
+    font-family: $font-family-adieu;
+    font-size: 80%;
+  }
+  &.byebye{
+
+  }
+  &.register_style{
+    span{
+      &.icon{
+        display: block;
+        position: relative;
+        padding-left: 25px;
+        svg{
+          left: 0;
+          top: -3px;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      &.none{
+        right: 0;
+        top: 33px;
+        z-index: 2;
+        color: #999;
+        font-size: 75%;
+        cursor: pointer;
+        position: absolute;
+        text-decoration: underline;
+      }
+    }
+    button[type="submit"]{
+      font-size: 18px;
+      font-family: $font-family-danza-medium;
+    }
+    input[type="text"],input[type="email"],input[type="password"],input[type="date"], textarea{
+      border: 0;
+      padding: 10px 0;
+      font-size: 18px;
+      border-radius: 0;
+      position: relative;
+      border-bottom: 2px solid #000;
+      font-family: $font-family-danza-medium;
+      &:focus{
+        color: #000;
+        border-color: $principal-color;
+        outline: none;
+      }
+      &.error{
+        border-color: red;
+      }
+    }
+  }
+  &.account_form{
+    input[type="text"],input[type="email"],input[type="password"],input[type="date"], textarea{
+      border: 0;
+      color: #D1D1D1;
+      display: block;
+      max-width: 300px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border: 1px solid #D1D1D1;
+      &:focus{
+        color: #000;
+        border-color: $principal-color;
+        outline: none;
+        font-family: $font-family-danza-medium;
+      }
+    }
+  }
+}
+
+.password_strength{
+  width: 100%;
+  height: 3px;
+  margin-top: 5px;
+  background: #DDD;
+  &__bar{
+    width: 0;
+    height: 3px;
+    background: $principal-color;
+    @include transition(width 250ms ease-out);
+  }
+}
+.form_password_helper{
+  width: 60%;
+  text-align: right;
+  font-family: $font-family-danza;
+  margin: 10px 0 0 40%;
+}
+
+
+.form_error{
+  width: 100%;
+  padding: 25px;
+  text-align: left;
+  border-radius: 5px;
+  background: #FFCCCC;
+  p{
+    color: #FF0401;
+    text-align: left;
+    font-family: $font-family-danza;
+    &.title{
+      margin-bottom: 20px;
+      font-family: $font-family-danza-medium;
+    }
+  }
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}

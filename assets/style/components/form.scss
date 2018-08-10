@@ -1,0 +1,21 @@
+form.basic_form{
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #000;
+  input{
+    border: 0;
+    width: 100%;
+    font-size: 16px;
+    background: transparent;
+    padding: 15px 30px 15px 0;
+  }
+  button{
+    top: 50%;
+    right: 0;
+    border: 0;
+    border-radius: 0;
+    position: absolute;
+    background: transparent;
+    @include transform(translateY(-50%));
+  }
+}

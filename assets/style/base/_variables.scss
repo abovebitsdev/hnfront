@@ -1,0 +1,29 @@
+$principal-color: #F9CC52;
+$black-color: rgba(0,0,0,0.2);
+$gray-color: #979797;
+
+$font-family-adieu: 'Adieu Bold';
+$font-family-danza: 'Danzza Regular';
+$font-family-danza-medium: 'Danzza Medium';
+
+$section-vertical-padding: 150px;
+
+
+@mixin breakpoint($class) {
+  @if $class == lg {
+    @media (max-width: 1200px) { @content; }
+  }
+  @else if $class == md {
+    @media (max-width: 992px) { @content; }
+  }
+  @else if $class == sm {
+    @media (max-width: 768px) { @content; }
+  }
+  @else if $class == xs {
+    @media (max-width: 600px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}

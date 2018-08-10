@@ -1,0 +1,154 @@
+
+@mixin absPosition ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+.loaders {
+    height: 300px;
+    line-height: 300px;
+    font-size: 50px;
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.loader-quart {
+  border-radius: 50px;
+  border: 6px solid rgba(255, 255, 255, 0.4);
+  &:after {
+    content: "";
+    @include absPosition(-6px, -6px, -6px, -6px);
+    border-radius: 50px;
+    border: 6px solid transparent;
+    border-top-color: $principal-color;
+    @include animation(spin 1s linear infinite);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    tranform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    tranform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    tranform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    tranform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Colors */
+$borderColor1: rgba(0,0,0,0.25); /* used for row 1 & 2 */
+$borderColor2: rgba(0,0,0,0.50);
+$borderColor3: rgba(0,0,0,0.75);
+$borderColor4: rgba(0,0,0,1.0);  /* used for row 1 & 2 */
+
+/* Dimensions */
+$borderWidthX: 10px;
+$borderWidthY: 10px;
+
+
+/*** Animations / styles ***/
+
+@keyframes border-loading-indicator-row-1 {
+  0% {
+    border-color: $borderColor1;
+    border-top-color: $borderColor4;
+  }
+  25% {
+    border-color: $borderColor1;
+    border-right-color: $borderColor4;
+  }
+  50% {
+    border-color: $borderColor1;
+    border-bottom-color: $borderColor4;
+  }
+  75% {
+    border-color: $borderColor1;
+    border-left-color: $borderColor4;
+  }
+  100% {
+    border-color: $borderColor1;
+    border-top-color: $borderColor4;
+  }
+}
+
+@keyframes border-loading-indicator-row-2 {
+  0% {
+    border-color: $borderColor4 $borderColor1 $borderColor2 $borderColor3;
+  }
+  25% {
+    border-color: $borderColor3 $borderColor4 $borderColor1 $borderColor2;
+  }
+  50% {
+    border-color: $borderColor2 $borderColor3 $borderColor4 $borderColor1;
+  }
+  75% {
+    border-color: $borderColor1 $borderColor2 $borderColor3 $borderColor3;
+  }
+  100% {
+    border-color: $borderColor4 $borderColor1 $borderColor2 $borderColor3;
+  }
+}
+
+.border-loading-indicator {
+  width: 0px;
+  height: 0px;
+  border: 0px solid $borderColor4;
+  border-width: $borderWidthY $borderWidthX;
+}
+
+.border-loading-indicator.row-1 {
+  top: 25%;
+  animation: border-loading-indicator-row-1 750ms linear infinite;
+}
+
+.border-loading-indicator.row-2 {
+  top: 75%;
+  animation: border-loading-indicator-row-2 750ms linear infinite;
+}
+
+.border-loading-indicator.col-1 {
+  width: $borderWidthX;
+  height: $borderWidthY;
+  border-width: ($borderWidthY / 2) ($borderWidthX / 2);
+  left: 25%;
+}
+
+.border-loading-indicator.col-2 {
+  left: 50%;
+}
+
+.border-loading-indicator.col-3 {
+  width: 0px;
+  height: 0px;
+  left: 75%;
+  border-radius: $borderWidthY $borderWidthX $borderWidthY $borderWidthX // $borderWidthX $borderWidthY $borderWidthX $borderWidthY;
+}

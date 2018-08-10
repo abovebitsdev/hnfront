@@ -1,0 +1,77 @@
+.hnn__community_featured{
+  width: 100%;
+  &>.container{
+    position: relative;
+    &.row{
+      position: relative;
+    }
+  }
+  &__profile{
+    position: relative;
+    &__text{
+      left: 50%;
+      bottom: 0;
+      z-index: 2;
+      color: #FFF;
+      width: 300px;
+      padding: 20px;
+      position: absolute;
+      margin-left: -150px;
+      border: 2px solid #FFF;
+      border-bottom: 0;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background: rgba(0,0,0,0.2);
+    }
+    &__image{
+      width: 100%;
+      padding-bottom: 120%;
+      background: black center center no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &__info{
+    font-size: 0;
+    text-align: left;
+    background: #FFF;
+    padding-right: 30px;
+    @include breakpoint(md){
+      padding-left: 30px;
+    };
+    &__featured{
+      font-size: 14px;
+      margin-bottom: 15px;
+      font-family: $font-family-danza;
+    }
+    &__name{
+      font-size: 25px;
+      line-height: 125%;
+      margin-bottom: 15px;
+      color: $principal-color;
+    }
+    &__description{
+      font-size: 16px;
+      margin-bottom: 60px;
+    }
+    &__details{
+      &__detail{
+        width: 50%;
+        padding-right: 4%;
+        margin-bottom: 20px;
+        display: inline-block;
+        font-size: 14px;
+        &__title{
+          font-family: $font-family-danza;
+        }
+        &.full{
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__backgroung{
+    background: #FFF;
+  }
+}

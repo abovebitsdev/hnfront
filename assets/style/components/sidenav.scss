@@ -1,0 +1,55 @@
+.side_mobile_menu{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 300px;
+  padding: 25px;
+  position: fixed;
+  pointer-events: none;
+  background: $principal-color;
+  a{
+    &.nuxt-link-active{
+      text-decoration: underline;
+    }
+  }
+  &__top{
+    li{
+      a{
+        color: #000;
+        display: block;
+        padding: 8px 0;
+        font-size: 22px;
+        text-decoration: none;
+      }
+      &.small{
+        margin-bottom: 30px;
+        a{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__bottom{
+    bottom: 50px;
+    position: absolute;
+    font-family: $font-family-danza;
+    ul{
+      li{
+        a{
+          color: #000;
+          font-size: 12px;
+          line-height: 180%;
+          text-decoration: none;
+        }
+      }
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+  &.active{
+    opacity: 1;
+    pointer-events: all;
+  }
+}
