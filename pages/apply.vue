@@ -150,10 +150,14 @@
 
                         <div class="column-16 column-xs-12 margin-bottom-xs text-left">
                             <span>How did you hear about Here Now Living</span>
-                            <div>
-                                <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="friend" required="required"/>Friend</label>
-                                <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="online" required="required"/>Online advertisement</label>
-                                <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="radio" required="required"/>Radio</label>
+                            <div style="margin-top:5px">
+                                <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="friend" required="required"/> Friend</label>
+                            </div>
+                            <div style="margin-top:5px">
+                                <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="online" required="required"/> Online advertisement</label>
+                            </div>
+                            <div style="margin-top:5px">
+                                <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="radio" required="required"/> Radio</label>
                             </div>
                         </div>
 
