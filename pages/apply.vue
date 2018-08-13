@@ -373,6 +373,16 @@ export default {
         this.form.passwordScoreText = this.form.passwordScores[0];
       }
     }
-  }
+  },
+    mounted(){
+        Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
+            return api.query(
+                Prismic.Predicates.any('document.type', ['apply', 'last_block'])
+            );
+        }).then(function(response){
+            console.log( response.results );
+            let element = response.results[0];
+        });
+    }
 }
 </script>
