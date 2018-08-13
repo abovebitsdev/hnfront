@@ -386,11 +386,10 @@ export default {
                 Prismic.Predicates.any('document.type', ['apply'])
             );
         }).then(function(response){
-            console.log( response.results );
-
             response.results.forEach(function(element) {
-                this.applyForm.title = element.data.title[0].text;
-                this.applyForm.description = element.data.description[0].text;
+                console.log(element);
+                this.applyForm.title = 'title';
+                this.applyForm.description = 'description';
             }.bind(this));
         }.bind(this), function(err) {
             console.log("Something went wrong: ", err);
