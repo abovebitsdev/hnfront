@@ -406,6 +406,24 @@ export default {
                 console.log(element);
                 this.applyForm.title = element.data.title[0].text;
                 this.applyForm.description = element.data.description[0].text;
+                this.applyForm.first_name = element.data.first_name[0].text;
+                this.applyForm.last_name = element.data.last_name[0].text;
+                this.applyForm.email = element.data.email[0].text;
+                this.applyForm.email_confirmed = element.data.email_confirmed[0].text;
+                this.applyForm.password = element.data.password[0].text;
+                this.applyForm.hear_about = element.data.hear_about[0].text;
+                this.applyForm.state = element.data.state[0].text;
+                this.applyForm.current_address = element.data.current_address[0].text;
+                this.applyForm.social_media = element.data.social_media[0].text;
+                this.applyForm.instagram_handle = element.data.instagram_handle[0].text;
+                this.applyForm.city = element.data.city[0].text;
+                this.applyForm.why_you = element.data.why_you[0].text;
+                this.applyForm.zipcode = element.data.zipcode[0].text;
+                this.applyForm.facebook = element.data.facebook[0].text;
+                this.applyForm.country = element.data.country[0].text;
+                this.applyForm.phone = element.data.phone[0].text;
+                this.applyForm.date_of_birth = element.data.date_of_birth[0].text;
+                this.applyForm.street = element.data.phone[0].street;
             }.bind(this));
         }.bind(this), function(err) {
             console.log("Something went wrong: ", err);
