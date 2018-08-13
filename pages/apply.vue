@@ -423,7 +423,7 @@ export default {
                 this.applyForm.country = element.data.form[0].country[0].text;
                 this.applyForm.phone = element.data.form[0].phone[0].text;
                 this.applyForm.date_of_birth = element.data.form[0].date_of_birth[0].text;
-                this.applyForm.street = element.data.form[0].street[0].street;
+                this.applyForm.street = element.data.form[0].street[0].text;
             }.bind(this));
         }.bind(this), function(err) {
             console.log("Something went wrong: ", err);
