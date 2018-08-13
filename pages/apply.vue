@@ -209,7 +209,7 @@ import Prismic from 'prismic-javascript';
 export default {
   data: function () {
     return {
-    ApplyForm : {
+    applyForm : {
         title : null,
         description : null
     },
@@ -388,8 +388,8 @@ export default {
         }).then(function(response){
             response.results.forEach(function(element) {
                 console.log(element);
-                this.applyForm.title = 'title';
-                this.applyForm.description = 'description';
+                this.applyForm.title = element.data.title[0].text;
+                this.applyForm.description = element.data.description[0].text;
             }.bind(this));
         }.bind(this), function(err) {
             console.log("Something went wrong: ", err);
