@@ -209,6 +209,10 @@ import Prismic from 'prismic-javascript';
 export default {
   data: function () {
     return {
+    ApplyForm : {
+        title : null,
+        description : null
+    },
       loadingForm: false,
       typeInputPassword: true,
       messageError: [],
