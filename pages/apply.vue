@@ -392,7 +392,9 @@ export default {
                 this.applyForm.title = element.data.title[0].text;
                 this.applyForm.description = element.data.description[0].text;
             }.bind(this));
-        });
+        }.bind(this), function(err) {
+            console.log("Something went wrong: ", err);
+        }.bind(this));
     }
 }
 </script>
