@@ -3,9 +3,7 @@
     <div class="hnn">
       <div class="hnn__yellow_hero">
           <!-- <h2 class="h1">Create your account</h2> -->
-          <h2 class="h1">Apply Now</h2>
           <h2 class="h1" v-text="applyForm.title"></h2>
-          <p>Join the family</p>
           <p v-text="applyForm.description"></p>
       </div>
 
@@ -32,24 +30,24 @@
                             </radio>
                           </div> -->
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>First Name *</span>
+                              <span v-text="applyForm.first_name"></span>
                               <input type="text" :class="{'error': singleErros.first_name, 'empty':!form.first_name }"  v-model="form.first_name" placeholder="" required="required">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Last Name *</span>
+                              <span v-text="applyForm.last_name"></span>
                               <input type="text" :class="{'error': singleErros.last_name, 'empty':!form.last_name }"  v-model="form.last_name" placeholder=""  required="required">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Email *</span>
+                              <span v-text="applyForm.email"></span>
                               <input type="email" :class="{'error': singleErros.email, 'empty':!form.email }"  v-model="form.email" placeholder="" required="required">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Email Confirmed *</span>
+                              <span v-text="applyForm.email_confirmed"></span>
                               <input type="email" :class="{'error': singleErros.email_confirmed, 'empty':!form.email_confirmed }"  v-model="form.email_confirmed" placeholder="" required="required">
                           </div>
 
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Password *</span>
+                              <span v-text="applyForm.password"></span>
                               <input type="password" :class="{'error': singleErros.password, 'empty':!form.password }"  v-model="form.password" @keyup="scorePassword" placeholder="" required="required" autocomplete="new-password">
                               <div class="form_password_helper">
                                 <span>Password Strength: <strong v-text="form.passwordScoreText"></strong></span>
@@ -60,7 +58,7 @@
                           </div>
 
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Date of Birth *</span>
+                              <span v-text="applyForm.date_of_birth"></span>
                               <!-- <datepicker v-model="form.dob" name="uniquename" required="required"></datepicker> -->
                               <input type="date" :class="{'error': singleErros.dob, 'empty':!form.dob }"  v-model="form.dob" placeholder="01/27/1985" required="required">
                               <!-- <b-input-modal v-model="form.dob"
@@ -75,30 +73,30 @@
                             <br>
                           </p>
                           <div class="column-16 column-xs-12 margin-bottom-xs text-left">
-                              <p>Current Address</p>
+                              <p v-text="applyForm.current_address"></p>
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Street</span>
+                              <span v-text="applyForm.street"></span>
                               <input type="text" :class="{'error': singleErros.street, 'empty':!form.street }"  v-model="form.street" placeholder="">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>City</span>
+                              <span v-text="applyForm.city"></span>
                               <input type="text" :class="{'error': singleErros.city, 'empty':!form.city }"  v-model="form.city" placeholder="">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>State</span>
+                              <span v-text="applyForm.state"></span>
                               <input type="text" :class="{'error': singleErros.state, 'empty':!form.state }"  v-model="form.state" placeholder="">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Zipcode</span>
+                              <span v-text="applyForm.zipcode"></span>
                               <input type="text" :class="{'error': singleErros.zipcode, 'empty':!form.zipcode }"  v-model="form.zipcode" placeholder="">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Country</span>
+                              <span v-text="applyForm.country"></span>
                               <input type="text" :class="{'error': singleErros.country, 'empty':!form.country }"  v-model="form.country" placeholder="">
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left">
-                              <span>Phone number *</span>
+                              <span v-text="applyForm.phone"></span>
                               <input type="text" :class="{'error': singleErros.phone, 'empty':!form.phone }"  v-model="form.phone" placeholder=""  required="required">
                           </div>
 
@@ -106,7 +104,7 @@
                             <br>
                           </p>
                           <div class="column-16 column-xs-12 margin-bottom-xs text-left">
-                              <p>Social Media</p>
+                              <p v-text="applyForm.social_media"></p>
                           </div>
                           <div class="column-8 column-xs-12 margin-bottom-xs text-left relative">
                               <span class="icon">
@@ -120,7 +118,7 @@
                               	c-1.225,0-2.219-0.994-2.219-2.219v-9.486h3.459C8.832,13.356,8.664,14.159,8.664,15c0,3.494,2.842,6.335,6.336,6.335
                               	s6.336-2.842,6.336-6.335c0-0.842-0.17-1.645-0.467-2.379h3.459V22.107z"/>
                                 </svg>
-                                Instagram Handle *
+                                <span class="handle" v-text="applyForm.instagram_handle"></span>
                               </span>
                               <span class="none" v-if="!form.instagram" @click="noneSocial('instagram')">
                                 None?
@@ -134,7 +132,7 @@
                                  <path id="facebook" fill="#000000" d="M17.252,11.106V8.65c0-0.922,0.611-1.138,1.041-1.138h2.643V3.459l-3.639-0.015
                               	c-4.041,0-4.961,3.023-4.961,4.961v2.701H10v4.178h2.336v11.823h4.916V15.284h3.316l0.428-4.178H17.252z"/>
                                 </svg>
-                                Facebook *
+                                <span class="handle" v-text="applyForm.facebook"></span>
                               </span>
                               <span class="none" v-if="!form.facebook" @click="noneSocial('facebook')">
                                 None?
@@ -146,12 +144,12 @@
                           </p>
 
                           <div class="column-16 column-xs-12 margin-bottom-xs text-left">
-                              <span>We are a members only community of entrepenuers, creatives and digital nomads focused on living with impact. We have one simple question: Why you? ( We want to know what makes you, you. Tell us the weird sh&%.)</span>
+                              <span v-text="applyForm.why_you"></span>
                               <input type="text" :class="{'error': singleErros.why_you, 'empty':!form.why_you }"  v-model="form.why_you" placeholder="Why you?"  required="required">
                           </div>
 
                         <div class="column-16 column-xs-12 margin-bottom-xs text-left">
-                            <span>How did you hear about Here Now Living</span>
+                            <span v-text="applyForm.hear_about"></span>
                             <div style="margin-top:5px">
                                 <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="friend" required="required"/> Friend</label>
                             </div>
@@ -211,7 +209,25 @@ export default {
     return {
     applyForm : {
         title : null,
-        description : null
+        description : null,
+        first_name : null,
+        last_name : null,
+        email : null,
+        email_confirmed : null,
+        password : null,
+        date_of_birth : null,
+        current_address : null,
+        street : null,
+        city : null,
+        phone : null,
+        state : null,
+        zipcode : null,
+        country : null,
+        social_media : null,
+        facebook : null,
+        instagram_handle : null,
+        why_you : null,
+        hear_about : null
     },
       loadingForm: false,
       typeInputPassword: true,
