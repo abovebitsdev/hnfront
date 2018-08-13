@@ -4,7 +4,9 @@
       <div class="hnn__yellow_hero">
           <!-- <h2 class="h1">Create your account</h2> -->
           <h2 class="h1">Apply Now</h2>
+          <h2 class="h1" v-text="applyForm.title"></h2>
           <p>Join the family</p>
+          <p v-text="applyForm.description"></p>
       </div>
 
       <div class="white-section">
@@ -377,11 +379,15 @@ export default {
     mounted(){
         Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
             return api.query(
-                Prismic.Predicates.any('document.type', ['apply', 'last_block'])
+                Prismic.Predicates.any('document.type', ['apply'])
             );
         }).then(function(response){
             console.log( response.results );
-            let element = response.results[0];
+
+            response.results.forEach(function(element) {
+                this.applyForm.title = element.data.title[0].text;
+                this.applyForm.description = element.data.description[0].text;
+            }.bind(this));
         });
     }
 }
