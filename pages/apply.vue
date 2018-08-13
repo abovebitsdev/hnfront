@@ -413,7 +413,7 @@ export default {
                 this.applyForm.password = element.data.form[0].password[0].text;
                 this.applyForm.hear_about = element.data.hear_about[0].text;
                 this.applyForm.state = element.data.form[0].state[0].text;
-                this.applyForm.current_address = element.data.current_address[0].text;
+                this.applyForm.current_address = element.data.form[0].current_address[0].text;
                 this.applyForm.social_media = element.data.social_media[0].text;
                 this.applyForm.instagram_handle = element.data.instagram_handle[0].text;
                 this.applyForm.city = element.data.form[0].city[0].text;
