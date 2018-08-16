@@ -196,7 +196,20 @@
     </div>
   </section>
 </template>
-
+<script>
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
+            'event_callback': callback
+        });
+        return false;
+    }
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
 <script>
 import {Checkbox, Radio} from 'vue-checkbox-radio';
@@ -430,7 +443,7 @@ export default {
         }.bind(this));
     },
     afterSubmitedForm : function(event){
-      console.log('submited')
+        gtag_report_conversion();
     }
 }
 </script>
