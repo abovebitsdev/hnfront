@@ -171,7 +171,7 @@
                           </div>
                           <div class="mobile-hide" style="height: 100px;"></div>
                           <div class="column-16 margin-top">
-                            <button type="submit" class="btn yellow">
+                            <button type="submit" class="btn yellow" v-on:click="afterSubmitedForm">
                               <span v-if="!loadingForm">Apply Now</span>
                               <span v-else>
                                 <div class="border-loading-indicator col-3 row-1"></div>
@@ -428,6 +428,9 @@ export default {
         }.bind(this), function(err) {
             console.log("Something went wrong: ", err);
         }.bind(this));
+    },
+    afterSubmitedForm : function(event){
+      console.log('submited')
     }
 }
 </script>
