@@ -78,12 +78,6 @@
                           <td>Included</td>
                         </tr>
                         <tr>
-                          <td>Blink Gym</td>
-                          <td>$30</td>
-                          <td class="mobile-hide">$30</td>
-                          <td>Included</td>
-                        </tr>
-                        <tr>
                           <td>Total Cost</td>
                           <td>$2,740</td>
                           <td class="mobile-hide">$1,690</td>
