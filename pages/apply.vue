@@ -322,6 +322,7 @@ export default {
           this.loadingForm = true;
           this.$store.dispatch('auth/signup', this.form).then(result => {
             this.form.sended = true;
+              gtag_report_conversion();
           }, (err) => {
             this.loadingForm = false;
             let errorMessage = err.response && err.response.data.errors[0].detail || String(err)
@@ -441,9 +442,6 @@ export default {
         }.bind(this), function(err) {
             console.log("Something went wrong: ", err);
         }.bind(this));
-    },
-    afterSubmitedForm : function(event){
-        gtag_report_conversion();
     }
 }
 </script>
