@@ -9,7 +9,18 @@
 </template>
 
 <script>
-    export default {
-        data : function (){}
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
+            'event_callback': callback
+        });
+        return false;
     }
+
+    gtag_report_conversion();
 </script>

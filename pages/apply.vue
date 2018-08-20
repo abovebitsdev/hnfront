@@ -196,20 +196,7 @@
     </div>
   </section>
 </template>
-<script>
-    function gtag_report_conversion(url) {
-        var callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
-            }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
-            'event_callback': callback
-        });
-        return false;
-    }
-</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
 <script>
 import {Checkbox, Radio} from 'vue-checkbox-radio';
@@ -322,7 +309,9 @@ export default {
           this.loadingForm = true;
           this.$store.dispatch('auth/signup', this.form).then(result => {
             this.form.sended = true;
-              gtag_report_conversion();
+
+              // window.location.href = "https://www.herenowliving.com/thank-you/"
+
           }, (err) => {
             this.loadingForm = false;
             let errorMessage = err.response && err.response.data.errors[0].detail || String(err)
