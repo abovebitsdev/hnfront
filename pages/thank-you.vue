@@ -9,6 +9,10 @@
 </template>
 
 <script>
+    export default {
+        data : function (){}
+    }
+
     function gtag_report_conversion(url) {
         var callback = function () {
             if (typeof(url) != 'undefined') {
