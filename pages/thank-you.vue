@@ -11,19 +11,16 @@
     export default {
         data : function (){
             return {
-                methods: {
-                    gtag_report_conversion(url) {
-                        var callback = function () {
-                            if (typeof(url) != 'undefined') {
-                                window.location = url;
-                            }
-                        };
-                        gtag('event', 'conversion', {
-                            'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
-                            'event_callback': callback
-                        });
-                        return false;
-                    }
+                mounted(){
+                    var callback = function () {
+                        if (typeof(url) != 'undefined') {
+                            window.location = url;
+                        }
+                    };
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
+                        'event_callback': callback
+                    });
                 }
             }
         }
