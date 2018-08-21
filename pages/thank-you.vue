@@ -9,22 +9,18 @@
 </template>
 <script>
     export default {
-        data : function (){
-            return {
-                mounted(){
-                    console.log('mounted detected');
-                    var callback = function () {
-                        if (typeof(url) != 'undefined') {
-                            window.location = url;
-                        }
-                    };
-                    console.log('gtag event');
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
-                        'event_callback': callback
-                    });
+        mounted(){
+            console.log('mounted detected');
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
                 }
-            }
+            };
+            console.log('gtag event');
+            gtag('event', 'conversion', {
+                'send_to': 'AW-792986929/La1TCOKtsocBELGKkPoC',
+                'event_callback': callback
+            });
         }
     }
 </script>
