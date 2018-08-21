@@ -310,7 +310,7 @@ export default {
           this.$store.dispatch('auth/signup', this.form).then(result => {
             this.form.sended = true;
 
-              // window.location.href = "https://www.herenowliving.com/thank-you/";
+              window.location.href = "https://www.herenowliving.com/thank-you/";
 
           }, (err) => {
             this.loadingForm = false;
