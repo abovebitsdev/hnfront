@@ -185,9 +185,8 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="column-7 column-md-6 offset-1 column-xs-12 margin-bottom-xs">
+                    <div class="column-6 column-md-6 offset-5 column-xs-12 margin-bottom-xs" style="margin-top: 15px;">
                       <div class="promo_card">
-                        <div class="promo_card__head"></div>
                         <div class="promo_card__body">
                           <div class="promo_card__body__title h3"></div>
                           <div class="promo_card__body__description"></div>
