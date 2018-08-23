@@ -3,6 +3,7 @@
       <div class="promo_card__head" v-bind:style="{ 'background-image': 'url( ' + data.image + ')' }"></div>
       <div class="promo_card__body">
         <div class="promo_card__body__title h3" v-text="data.title"></div>
+        <div class="promo_card__body__description" style="margin:10px auto 0">570 Evergreen Avenue<br />Brooklyn, NY 11221</div>
         <div class="promo_card__body__description" v-text="data.description"></div>
         <div class="promo_card__body__cta">
           <a class="btn-arrow" :class="{'hover': fake_over}" :href="data.cta.url"><span v-text="data.cta.text"></span></a>
