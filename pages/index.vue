@@ -186,10 +186,10 @@
                   </div>
                   <div class="row">
                     <div class="column-6 column-md-6 offset-5 column-xs-12 margin-bottom-xs" style="margin-top: 15px;">
-                      <div class="promo_card">
+                      <div class="promo_card" style="cursor: default">
                         <div class="promo_card__body">
-                          <div class="promo_card__body__title h3"></div>
-                          <div class="promo_card__body__description"></div>
+                          <div class="promo_card__body__title h3">570 Evergreen Avenue</div>
+                          <div class="promo_card__body__description">Brooklyn, NY 11221</div>
                         </div>
                       </div>
                     </div>
