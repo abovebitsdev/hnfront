@@ -255,8 +255,8 @@
 
 
         <div class="hnn__home_hero last" v-fadescroll>
-            <div class="hnn__home_hero__content active">
-                <h4 class="h2" v-text="lastBlock.title"></h4>
+            <div class="hnn__home_hero__content active" style="max-width: 620px">
+                <h4 class="h2" style="font-size:33px;line-height:30px" v-text="lastBlock.title"></h4>
                 <p v-if="lastBlock.description != '-'" v-text="lastBlock.description"></p>
                 <a href="/apply" class="btn yellow">Apply Now</a>
             </div>
