@@ -263,8 +263,7 @@ if (process.browser) {
     Slick = require('vue-slick').default;
 }
 
-console.log(location.referrer);
-console.log(document.referrer);
+
 
 import Prismic from 'prismic-javascript'
 import Promocard from '~/components/PromoCard'
@@ -321,6 +320,9 @@ export default {
     Slick
   },
   mounted(){
+      console.log(location.referrer);
+      console.log(document.referrer);
+
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
         Prismic.Predicates.any('document.type', ['home_page', 'places'])
