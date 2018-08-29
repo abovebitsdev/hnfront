@@ -263,6 +263,9 @@ if (process.browser) {
     Slick = require('vue-slick').default;
 }
 
+console.log(location.referrer);
+console.log(document.referrer);
+
 import Prismic from 'prismic-javascript'
 import Promocard from '~/components/PromoCard'
 
