@@ -320,8 +320,12 @@ export default {
     Slick
   },
   mounted(){
-      console.log(location.referrer);
-      console.log(document.referrer);
+      var date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+
+      document.cookie = "referrer=" + document.referrer + "; expires="+ date.toUTCString() + "; path=/";
+      document.cookie = "location=" + location.referrer + "; expires="+ date.toUTCString() + "; path=/";
+
 
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
