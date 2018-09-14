@@ -321,11 +321,13 @@ export default {
   },
   mounted(){
       var date = new Date();
-      date.setTime(date.getTime() + (days*24*60*60*1000));
+      date.setTime(date.getTime() + (2*24*60*60*1000));
 
       document.cookie = "referrer=" + document.referrer + "; expires="+ date.toUTCString() + "; path=/";
       document.cookie = "location=" + location.referrer + "; expires="+ date.toUTCString() + "; path=/";
 
+      console.log(document.referrer);
+      console.log(location.referrer);
 
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
