@@ -160,6 +160,7 @@
                                 <label><input type="radio" :class="{'error': singleErros.hear_about, 'empty':!form.hear_about }" v-model="form.hear_about" value="radio"/> Radio</label>
                             </div>
                         </div>
+                            <input type="hidden" :class="{'error': singleErros.referrer, 'empty':!form.referrer }"  v-model="form.referrer" placeholder="">
 
                           <div v-if="messageError.length > 0" class="column-16">
                             <div class="form_error">
@@ -227,7 +228,8 @@ export default {
         facebook : null,
         instagram_handle : null,
         why_you : null,
-        hear_about : null
+        hear_about : null,
+        referrer : null
     },
       loadingForm: false,
       typeInputPassword: true,
@@ -253,6 +255,7 @@ export default {
         facebook: '',
         why_you: '',
         hear_about: '',
+        referrer: '',
       },
       singleErros: {
         first_name: false,
@@ -270,6 +273,7 @@ export default {
         instagram: false,
         facebook: false,
         why_you: false,
+        referrer: false,
       },
       creditCardType: null
     }
@@ -290,6 +294,14 @@ export default {
         this.singleErros.password = false;
         this.singleErros.email = false;
         this.singleErros.email_confirmed = false;
+
+          var cookie_name = "refferer_domain";
+          var matches = document.cookie.match(new RegExp(
+              "(?:^|; )" + cookie_name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+          ));
+          var result = matches ? decodeURIComponent(matches[1]) : '';
+          this.form.referrer = result;
+
         if(this.form.password.length < 8){
           this.singleErros.password = true;
           this.messageError.push('Password mush have at least 8 characters');
@@ -400,14 +412,6 @@ export default {
     }
   },
     mounted(){
-      var cookie_name = "refferer_domain";
-        var matches = document.cookie.match(new RegExp(
-            "(?:^|; )" + cookie_name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        ));
-        var result = matches ? decodeURIComponent(matches[1]) : undefined;
-
-        console.log(result);
-
         Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
             return api.query(
                 Prismic.Predicates.any('document.type', ['apply'])
