@@ -321,6 +321,10 @@ export default {
   },
   mounted(){
 
+      if(document.referrer !== ''){
+          document.cookie = "refferer_domain=" + document.referrer;
+      }
+
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
         Prismic.Predicates.any('document.type', ['home_page', 'places'])

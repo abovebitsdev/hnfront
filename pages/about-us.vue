@@ -119,8 +119,6 @@ export default {
   mounted(){
     this.homeShowing = true;
 
-      document.cookie = "domain=" + document.referrer;
-
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
         Prismic.Predicates.any('document.type', ['about_us_page', 'last_block'])
