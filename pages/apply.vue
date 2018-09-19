@@ -399,6 +399,38 @@ export default {
       }
     }
   },
-    mounted(){}
+    mounted(){
+        Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
+            return api.query(
+                Prismic.Predicates.any('document.type', ['apply'])
+            );
+        }).then(function(response){
+            response.results.forEach(function(element) {
+                console.log(element);
+                this.applyForm.title = element.data.title[0].text;
+                this.applyForm.description = element.data.description[0].text;
+                this.applyForm.first_name = element.data.form[0].first_name[0].text;
+                this.applyForm.last_name = element.data.form[0].last_name[0].text;
+                this.applyForm.email = element.data.form[0].email[0].text;
+                this.applyForm.email_confirmed = element.data.form[0].email_confirmed[0].text;
+                this.applyForm.password = element.data.form[0].password[0].text;
+                this.applyForm.hear_about = element.data.hear_about[0].text;
+                this.applyForm.state = element.data.form[0].state[0].text;
+                this.applyForm.current_address = element.data.form[0].current_address[0].text;
+                this.applyForm.social_media = element.data.social_media[0].text;
+                this.applyForm.instagram_handle = element.data.instagram_handle[0].text;
+                this.applyForm.city = element.data.form[0].city[0].text;
+                this.applyForm.why_you = element.data.why_you[0].text;
+                this.applyForm.zipcode = element.data.form[0].zipcode[0].text;
+                this.applyForm.facebook = element.data.facebook[0].text;
+                this.applyForm.country = element.data.form[0].country[0].text;
+                this.applyForm.phone = element.data.form[0].phone[0].text;
+                this.applyForm.date_of_birth = element.data.form[0].date_of_birth[0].text;
+                this.applyForm.street = element.data.form[0].street[0].text;
+            }.bind(this));
+        }.bind(this), function(err) {
+            console.log("Something went wrong: ", err);
+        }.bind(this));
+    }
 }
 </script>
