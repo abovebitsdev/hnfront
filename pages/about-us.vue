@@ -119,6 +119,8 @@ export default {
   mounted(){
     this.homeShowing = true;
 
+      document.cookie = "domain=" + document.referrer;
+
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
         Prismic.Predicates.any('document.type', ['about_us_page', 'last_block'])
@@ -156,29 +158,5 @@ export default {
     }.bind(this));
 
   }
-}
-</script>
-<script>
-setCookie('domain', document.referrer);
-function setCookie(name, value, props) {
-    props = props || {}
-    var exp = props.expires
-    if (typeof exp == "number" && exp) {
-        var d = new Date()
-        d.setTime(d.getTime() + exp*1000)
-        exp = props.expires = d
-    }
-
-    if(exp && exp.toUTCString) { props.expires = exp.toUTCString() }
-    value = encodeURIComponent(value)
-    var updatedCookie = name + "=" + value
-    for(var propName in props){
-        updatedCookie += "; " + propName
-        var propValue = props[propName]
-        if(propValue !== true){ updatedCookie += "=" + propValue }
-    }
-
-    document.cookie = updatedCookie
-
 }
 </script>
