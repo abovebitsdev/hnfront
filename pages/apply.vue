@@ -400,6 +400,14 @@ export default {
     }
   },
     mounted(){
+      var cookie_name = "refferer_domain";
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + cookie_name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        var result = matches ? decodeURIComponent(matches[1]) : undefined;
+
+        console.log(result);
+
         Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
             return api.query(
                 Prismic.Predicates.any('document.type', ['apply'])
