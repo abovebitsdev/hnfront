@@ -179,7 +179,6 @@
                             </button>
                           </div>
                         </div>
-                          <input type="hidden" v-model="" />
                       </form>
                       <div v-else class="">
                         <p class="h3">Thanks! We've got your application.</p>
