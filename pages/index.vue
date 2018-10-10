@@ -211,7 +211,7 @@
                       <p class="hnn__home_friendship__body__content__title" v-text="friendshipData.one.title"></p>
                       <p class="hnn__home_friendship__body__content__description" v-text="friendshipData.one.description"></p>
                       <div class="hnn__home_friendship__body__content__cta">
-                          <a class="btn-arrow" href="https://google.com"><span>Find your people</span></a>
+                          <a class="btn-arrow" href="https://www.herenowliving.com/community"><span>Find your people</span></a>
                       </div>
                     </div>
                   </div>
@@ -233,7 +233,7 @@
                         <p class="hnn__home_friendship__body__content__title" v-text="friendshipData.two.title"></p>
                         <p class="hnn__home_friendship__body__content__description" v-text="friendshipData.two.description"></p>
                         <div class="hnn__home_friendship__body__content__cta">
-                            <a class="btn-arrow" href="https://google.com" ref="hustleGrind" id="hustleGrind"><span>Get to know us</span></a>
+                            <a class="btn-arrow" href="https://www.herenowliving.com/about-us" ref="hustleGrind" id="hustleGrind"><span>Get to know us</span></a>
                         </div>
                       </div>
                     </div>
