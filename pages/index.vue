@@ -187,7 +187,7 @@
                       <div class="promo_card">
                         <div class="promo_card__head" style="background-image: url('https://here-and-now.cdn.prismic.io/here-and-now/2d311e1654b1eaa3caf0c609048f244614576ffc_gettyimages-599541561.jpg');"></div>
                         <div class="promo_card__body">
-                          <div class="promo_card__body__title h3">Logan Square, Chicago</div>
+                          <div class="promo_card__body__title h3" v-text="locationData[0].title">Logan Square, Chicago</div>
                           <div class="promo_card__body__description" style="margin:10px auto 0"><br />Coming Soon</div>
                           <div class="promo_card__body__description"></div>
                           <div class="promo_card__body__cta">
@@ -197,17 +197,15 @@
                       </div>
                     </div>
                     <div class="column-6 column-md-6 offset-1 column-xs-12 margin-bottom-xs" style="display:none">
-                      <div class="promo_card">
-                        <div class="promo_card__head" style="background-image: url('https://here-and-now.cdn.prismic.io/here-and-now/2d311e1654b1eaa3caf0c609048f244614576ffc_gettyimages-599541561.jpg');"></div>
-                        <div class="promo_card__body">
-                          <div class="promo_card__body__title h3">Logan Square, Chicago</div>
-                          <div class="promo_card__body__description" style="margin:10px auto 0"><br />Coming Soon</div>
-                          <div class="promo_card__body__description"></div>
-                          <div class="promo_card__body__cta">
-                            <a class="btn-arrow" href="/"><span>Visit Logan Square</span></a>
-                          </div>
-                        </div>
-                      </div>
+                      <Promocard :data="{
+                          'image': locationData[1].image,
+                          'title': locationData[1].title,
+                          'description': '',
+                          'cta': {
+                            'text': 'Coming Soon',
+                            'url': 'www.herenowliving.com/membership'
+                          }
+                        }"/>
                     </div>
                     <div class="column-6 column-md-6 offset-1 column-xs-12 margin-bottom-xs" style="display:none">
                       <div class="promo_card">
@@ -372,16 +370,13 @@ export default {
     }).then(function(response) {
 
       let counter = 1;
-      let counterLocation = 1;
       response.results.forEach(function(element) {
 
           if(element.type === 'locations'){
               let location = {}
               location.title = element.data.location_name[0].text;
               location.image = element.data.location_image.url;
-              location.value = counterLocation;
               this.locationData.push(location);
-              counter ++;
           }
         if(element.type === 'home_page'){
           this.heroData.image = element.data.hero_image.url;
@@ -442,8 +437,6 @@ export default {
           behavior: 'smooth'
         });
       }
-
-        console.log(this.locationData);
 
     }.bind(this), function(err) {
       console.log("Something went wrong: ", err);
