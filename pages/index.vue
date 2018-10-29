@@ -184,10 +184,12 @@
                         }"/>
                     </div>
                     <div class="column-6 column-md-6 column-xs-12 margin-bottom-xs" style="display:none">
-                      <Promocard :data="{
+                      <Locations :data="{
                           'image': locationData[0].image,
                           'title': locationData[0].title,
                           'description': '',
+                          'address': '',
+                          'location': '',
                           'cta': {
                             'text': 'Coming Soon',
                             'url': 'www.herenowliving.com/'
@@ -195,10 +197,12 @@
                         }"/>
                     </div>
                     <div class="column-6 column-md-6 offset-2 column-xs-12 margin-bottom-xs" style="display:none">
-                      <Promocard :data="{
+                      <Locations :data="{
                           'image': locationData[1].image,
                           'title': locationData[1].title,
                           'description': '',
+                          'address': '',
+                          'location': '',
                           'cta': {
                             'text': 'Coming Soon',
                             'url': 'www.herenowliving.com/'
@@ -206,10 +210,12 @@
                         }"/>
                     </div>
                     <div class="column-6 column-md-6 column-xs-12 margin-bottom-xs" style="display:none">
-                      <Promocard :data="{
+                      <Locations :data="{
                           'image': locationData[2].image,
                           'title': locationData[2].title,
                           'description': '',
+                          'address': '',
+                          'location': '',
                           'cta': {
                             'text': 'Coming Soon',
                             'url': 'www.herenowliving.com/'
@@ -300,6 +306,7 @@ if (process.browser) {
 
 import Prismic from 'prismic-javascript'
 import Promocard from '~/components/PromoCard'
+import Locations from '~/components/Locations'
 
 export default {
   data: function () {
@@ -351,6 +358,7 @@ export default {
   },
   components: {
     Promocard,
+    Locations,
     Slick
   },
   mounted(){
