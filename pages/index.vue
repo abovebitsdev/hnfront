@@ -351,6 +351,7 @@ export default {
      },
 
      placesData: [],
+    locationData : [],
      onlyOnePlace: false,
     }
   },
@@ -371,9 +372,16 @@ export default {
     }).then(function(response) {
 
       let counter = 1;
+      let counterLocation = 1;
       response.results.forEach(function(element) {
+
           if(element.type === 'locations'){
-              console.log(element.data);
+              let location = {}
+              location.title = element.data.location_name[0].text;
+              location.image = element.data.location_image.url;
+              location.value = counterLocation;
+              this.locationData.push(location);
+              counter ++;
           }
         if(element.type === 'home_page'){
           this.heroData.image = element.data.hero_image.url;
@@ -434,6 +442,8 @@ export default {
           behavior: 'smooth'
         });
       }
+
+        console.log(this.locationData);
 
     }.bind(this), function(err) {
       console.log("Something went wrong: ", err);
