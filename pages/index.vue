@@ -366,12 +366,15 @@ export default {
 
     Prismic.getApi(process.env.apiPrismicUrl + '/api/v2').then(function(api) {
       return api.query(
-        Prismic.Predicates.any('document.type', ['home_page', 'places'])
+        Prismic.Predicates.any('document.type', ['home_page', 'places', 'locations'])
       );
     }).then(function(response) {
 
       let counter = 1;
       response.results.forEach(function(element) {
+          if(element.type === 'locations'){
+              console.log(element.data);
+          }
         if(element.type === 'home_page'){
           this.heroData.image = element.data.hero_image.url;
           this.heroData.description = element.data.hero_description[0].text;
