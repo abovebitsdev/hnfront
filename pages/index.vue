@@ -161,7 +161,7 @@
               <div class="hnn__preview__body">
                 <div class="container">
                   <div v-if="homeShowing" class="row">
-                    <div :class="{'align-self-center': onlyOnePlace}"  class="column-7 column-md-6 offset-1 column-xs-12 margin-bottom-xs">
+                    <div class="column-6 column-md-6 offset-2 column-xs-12 margin-bottom-xs">
                       <Promocard :data="{
                           'image': placesData[0].image,
                           'title': placesData[0].name,
@@ -172,7 +172,7 @@
                           }
                         }"/>
                     </div>
-                    <div v-if="!onlyOnePlace" class="column-7 column-md-6 column-xs-12">
+                    <div v-if="!onlyOnePlace" class="column-6 column-md-6 column-xs-12">
                       <Promocard :data="{
                           'image': placesData[1].image,
                           'title': placesData[1].name,
@@ -183,7 +183,7 @@
                           }
                         }"/>
                     </div>
-                    <div class="column-6 column-md-6 column-xs-12 margin-bottom-xs" style="display:none">
+                    <div class="column-6 column-md-6 column-xs-12 margin-bottom-xs">
                       <Locations :data="{
                           'image': locationData[0].image,
                           'title': locationData[0].title,
@@ -192,11 +192,11 @@
                           'location': '',
                           'cta': {
                             'text': 'Coming Soon',
-                            'url': 'www.herenowliving.com/'
+                            'url': '/#'
                           }
                         }"/>
                     </div>
-                    <div class="column-6 column-md-6 offset-2 column-xs-12 margin-bottom-xs" style="display:none">
+                    <div class="column-6 column-md-6 offset-2 column-xs-12 margin-bottom-xs">
                       <Locations :data="{
                           'image': locationData[1].image,
                           'title': locationData[1].title,
@@ -205,11 +205,11 @@
                           'location': '',
                           'cta': {
                             'text': 'Coming Soon',
-                            'url': 'www.herenowliving.com/'
+                            'url': '/#'
                           }
                         }"/>
                     </div>
-                    <div class="column-6 column-md-6 column-xs-12 margin-bottom-xs" style="display:none">
+                    <div class="column-6 column-md-6 column-xs-12 margin-bottom-xs">
                       <Locations :data="{
                           'image': locationData[2].image,
                           'title': locationData[2].title,
@@ -218,7 +218,7 @@
                           'location': '',
                           'cta': {
                             'text': 'Coming Soon',
-                            'url': 'www.herenowliving.com/'
+                            'url': '/#'
                           }
                         }"/>
                     </div>
