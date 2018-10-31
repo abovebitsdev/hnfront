@@ -6,7 +6,8 @@
             <div class="promo_card__body__description" style="margin:10px auto 0"><span v-text="data.address"></span><br /><span v-text="data.location"></span></div>
             <div class="promo_card__body__description" v-text="data.description"></div>
             <div class="promo_card__body__cta">
-                <a class="btn-arrow" :class="{'hover': fake_over}" :href="data.cta.url"><span v-text="data.cta.text"></span></a>
+                <span v-text="data.cta.text"></span>
+                <!--<a class="btn-arrow" :class="{'hover': fake_over}" :href="data.cta.url"></a>-->
             </div>
         </div>
     </div>
