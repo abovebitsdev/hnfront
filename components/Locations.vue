@@ -1,5 +1,6 @@
 <template>
-    <div class="promo_card" :class="{'shadow': data.size}" @click.prevent="redirectToURL" @mouseover="fakeHover" @mouseout="fakeHoverOut" :style="[widthStyle]">
+    <!--<div class="promo_card" :class="{'shadow': data.size}" @click.prevent="redirectToURL" @mouseover="fakeHover" @mouseout="fakeHoverOut" :style="[widthStyle]">-->
+    <div class="promo_card" :class="{'shadow': data.size}" @mouseover="fakeHover" @mouseout="fakeHoverOut" :style="[widthStyle]">
         <div class="promo_card__head" v-bind:style="{ 'background-image': 'url( ' + data.image + ')' }"></div>
         <div class="promo_card__body">
             <div class="promo_card__body__title h3" v-text="data.title"></div>
