@@ -1,5 +1,13 @@
 <template>
   <section>
+    {
+      metaInfo: {
+        meta: [
+          { charset: 'utf-8' },
+          { name: 'Here and Now - Co-living in Brooklyn, NY', content: 'Here and Now Living is a co-living space in Brooklyn, New York for creatives  - Join Here & Now Living today!' }
+        ]
+      }
+    }
       <div class="hnn">
         <div class="hnn__home_hero">
             <div class="hnn__home_hero__content" :class="{'active': homeShowing}">
